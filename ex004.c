@@ -8,25 +8,25 @@ FirstString－－SecondString
 */
 #include<stdio.h>
 #include<string.h>
-char fun(char *p1, char *p2)
+char* fun(char *p1, char *p2)
 {
 	int i=0;
-	for(i=0; i<strlen(*p2); i++)
+	for(i=0; i<strlen(p2); i++)
 	{
-		*(p1+strlen(p1)+i)=*(p2+i);
+		*(p1+strlen(p1))=*(p2+i);//strlen中的p1自增，因此不用写成*(p1+strlen(p1)+i)
+		printf("%s\n", p1);
 	}
-	return *p1;
+	return p1;
 }
 
 int main()
 {
-    char * p1, p2, p3;
-    char a1[]="FirstString－－", a2[]="SecondString";
-    p1=&a1[0]; p2=&a2[0];
-    char out[100];
+    char * p1, *p2, *p3;
+    char a1[100]="FirstString--", a2[100]="SecondString";
+    p1=a1; p2=a2;
     p3=fun(p1, p2);
-    p3=&out[0];
-    puts(out);
+    printf("%s\n", p3);
+    return 0;
 }
 /*void fun(char p1[], char p2[])
 {int i,j;
