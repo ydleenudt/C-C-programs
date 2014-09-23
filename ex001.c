@@ -4,40 +4,44 @@
 
 #include<stdio.h>
 
+double fac(int n)
+{
+	if(n==1||n==0)	return 1.0;
+	else	return (double)(n*fac(n-1));
+}
+
+double fac_odd(int n)
+{
+	int i=1; double t=1.0;
+	//if(n<1)	printf("syntax error, please check your input!\n");
+
+	for(i=0; i<=n; i++)
+	{
+		t=t*(2*i+1);
+	}
+	return t;
+}
+
 double fun(double k)
 {
-	int n=1; double temp=0, i;
+	int n=1,i; double temp=0.0;
 	while((fac(n)/fac_odd(n))>=k)
 	{
 		n++;
 	}
-	for(i=1; i<=n; i++)
+	for(i=0; i<=n; i++)
 	{
 		temp+=(fac(i)/fac_odd(i));
+		printf("%lf %lf %lf\n", temp, fac(i), fac_odd(i));
 	}
-	return (temp+1)/2;
+	return (temp)*2;
 }
 
-int fac(n)
-{
-	if(n==1||n==0)	return 1;
-	else	return n*fac(n-1);
-}
 
-int fac_odd(n)
-{
-	int i=1, t=1;
-	if(n<1)	printf("syntax error, please check your input!\n");
-	else
-	for(i=1; i<=n; i++)
-	{
-		t=t*(2*i-1);
-	}
-}
 
 int main()
 {
-    int k=0.00005;
+    double k=0.00005;
     printf("Pi = %lf",fun(k));
 }
 /*【参考答案】
