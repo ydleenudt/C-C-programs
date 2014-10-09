@@ -1,6 +1,6 @@
-/*编写函数void fun(char *tt，int pp[])
-统计在tt所指的字符串中'a'到'z'26个小写字母各自出现的次数，并依次放在pp所指的数组中
-例如，当输入字符串abcdefgabcdeabc后，程序的输出结果应该是：
+/*±àÐ´º¯Êývoid fun(char *tt£¬int pp[])
+Í³¼ÆÔÚttËùÖ¸µÄ×Ö·û´®ÖÐ'a'µ½'z'26¸öÐ¡Ð´×ÖÄ¸¸÷×Ô³öÏÖµÄ´ÎÊý£¬²¢ÒÀ´Î·ÅÔÚppËùÖ¸µÄÊý×éÖÐ
+ÀýÈç£¬µ±ÊäÈë×Ö·û´®abcdefgabcdeabcºó£¬³ÌÐòµÄÊä³ö½á¹ûÓ¦¸ÃÊÇ£º
 3 3 3 2 2 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 */
 
@@ -29,13 +29,17 @@ int main(void)
 {
 	char *tt="abcdefgabcdeabc";
 	int pp[26];
-	fun(*tt, pp[]);
+	fun(tt, pp);
 	puts(tt);
+	int i=0;
+	for(i=0; i<26; i++){
+		printf("%d", pp[i]);
+	}
 }
 
 
 /*
-【参考答案】
+¡¾²Î¿¼´ð°¸¡¿
 void fun(char *tt, int pp[])
 {int i;
 for(i=0;i<26;i++)
