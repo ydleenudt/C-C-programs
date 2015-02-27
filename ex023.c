@@ -4,33 +4,38 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 
-/*
+
 void fun(char *s, char *t)
 {
     int n=0;
     while(*s)
     {
-        if(n%2 == 0){
+        if(n%2 == 1){
             *t = *s;
             t++;
         }
+        s++;
         n++;
     }
+    *t = '\0';
 }
-*/
+
+/*
 void fun(char *s, char t[])
 {int i,j=0,k=strlen(s);
 for(i=1;i<k;i=i+2)
 t[j++]=s[i];
 t[j]='\0';}
-
+*/
 
 int main()
 {
     char s[] = "ABCDEFGHIJK";
     char *t;
-    t = malloc(10);
+    t = malloc(13);
     fun(s, t);
     puts(t);
+    return 0;
 }
