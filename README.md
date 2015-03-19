@@ -12,3 +12,4 @@ C-C-programs
 5. ex044.c is the same as one before it. So it is negelected intentionally;
 6. ex045.c is the same as one before it. So it is negelected intentionally;
 7. ex046.c is the same as one before it. So it is negelected intentionally;
+8. ex049.c is the same as one before it. So it is negelected intentionally.
